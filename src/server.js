@@ -29,21 +29,21 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
 // Uncomment the below code for the production and localhost environment CORS handling
 // =================================
 
-// app.use(cors({
-//   origin: function(origin, callback) {
-//     // Allow requests with no origin (mobile apps, Postman, etc.)
-//     if (!origin) return callback(null, true);
+app.use(cors({
+  origin: function(origin, callback) {
+    // Allow requests with no origin (mobile apps, Postman, etc.)
+    if (!origin) return callback(null, true);
     
-//     if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes('*')) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   credentials: true,
-//   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-//   allowedHeaders: ['Content-Type', 'Authorization']
-// }));
+    if (allowedOrigins.indexOf(origin) !== -1 || allowedOrigins.includes('*')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 
 // =================================
@@ -51,12 +51,12 @@ const allowedOrigins = process.env.ALLOWED_ORIGINS
 // =================================
 
 // CORS configuration - Allow all origins in development
-app.use(cors({
-  origin: true, // Allow all origins
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
+// app.use(cors({
+//   origin: true, // Allow all origins
+//   credentials: true,
+//   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+//   allowedHeaders: ['Content-Type', 'Authorization']
+// }));
 
 // Body parser middleware
 app.use(express.json({ limit: '10mb' }));
