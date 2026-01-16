@@ -8,21 +8,21 @@ A secure, scalable RESTful API backend for NK Divanshu Builders and Services Pvt
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Environment Variables](#environment-variables)
-- [API Documentation](#api-documentation)
-- [Frontend Integration Guide](#frontend-integration-guide)
-- [Database Schema](#database-schema)
-- [Security Features](#security-features)
-- [Testing](#testing)
-- [Deployment](#deployment)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
+- [🎯 Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#️-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Environment Variables](#-environment-variables)
+- [API Documentation](#-api-documentation)
+- [Frontend Integration Guide](#-frontend-integration-guide)
+- [Database Schema](#️-database-schema)
+- [Security Features](#-security-features)
+- [Testing](#-testing)
+- [Deployment](#-deployment)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [License](#-license)
 
 ---
 
@@ -143,7 +143,7 @@ Before you begin, ensure you have:
 
 #### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/your-username/nk-divanshu-backend.git
+git clone https://github.com/Suresh-kumar-barawar/nk-divanshu-backend.git
 cd nk-divanshu-backend
 ```
 
@@ -1363,7 +1363,7 @@ Please enter a valid email
 ### Manual Testing with Postman
 
 **Import Collection:**
-1. Download Postman collection from `/postman/collection.json`
+1. Download Postman collection from `https://github.com/Suresh-kumar-barawar/nk-divanshu-backend/blob/main/NK-Divanshu-Builders-API.postman_collection.json`
 2. Import into Postman
 3. Set environment variable: `baseURL = http://localhost:5000`
 
@@ -1622,7 +1622,7 @@ All rights reserved. Unauthorized copying, distribution, or use is strictly proh
 For technical support or questions:
 
 - 📧 Email: darshan.suresh.devs@gmail.com
-- 🐛 Issues: [GitHub Issues](https://github.com/your-repo/issues)
+- 🐛 Issues: [GitHub Issues](https://github.com/Suresh-kumar-barawar/nk-divanshu-backend/issues)
 
 ---
 
