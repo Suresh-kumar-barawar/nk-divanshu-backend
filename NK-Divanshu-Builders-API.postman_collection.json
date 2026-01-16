@@ -1,0 +1,533 @@
+{
+  "info": {
+    "name": "NK Divanshu Builders API",
+    "description": "Complete API testing suite for NK Divanshu Builders and Services Pvt Ltd",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health & Info",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["health"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "API Info",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": [""]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Contact Form",
+      "item": [
+        {
+          "name": "Submit Contact - Valid",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Rajesh Kumar\",\n  \"email\": \"rajesh.kumar@example.com\",\n  \"phone\": \"+91 9876543210\",\n  \"subject\": \"Project\",\n  \"message\": \"I am interested in constructing a 3BHK house in Shimla. Please provide me with a consultation.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Contact - Consultation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Priya Sharma\",\n  \"email\": \"priya.sharma@gmail.com\",\n  \"phone\": \"+91 9988776655\",\n  \"subject\": \"Consultation\",\n  \"message\": \"Need expert advice on building materials and construction timeline for a 2000 sq.ft home.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Contact - Partnership",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Amit Verma\",\n  \"email\": \"amit.verma@construction.com\",\n  \"phone\": \"+91 9123456789\",\n  \"subject\": \"Partnership\",\n  \"message\": \"Our company is interested in exploring partnership opportunities for residential projects in North India.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Contact - Missing Name (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"test@example.com\",\n  \"phone\": \"+91 9876543210\",\n  \"subject\": \"Project\",\n  \"message\": \"This should fail - missing name\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Contact - Invalid Email (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"invalid-email\",\n  \"phone\": \"+91 9876543210\",\n  \"subject\": \"Project\",\n  \"message\": \"This should fail - invalid email format\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Contact - Short Message (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"+91 9876543210\",\n  \"subject\": \"Project\",\n  \"message\": \"Short\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Contact Submissions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Contact Submissions - Filtered by Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/contact?status=new&page=1&limit=10",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "new"
+                },
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Contact Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/contact/stats",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact", "stats"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Quote Requests",
+      "item": [
+        {
+          "name": "Submit Quote - Silver Package",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Suresh Patel\",\n  \"email\": \"suresh.patel@gmail.com\",\n  \"phone\": \"+91 9876543210\",\n  \"package\": \"Silver\",\n  \"area\": 1200,\n  \"message\": \"Looking for basic construction package for a small 2BHK flat in Shimla.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Quote - Gold Package",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Neha Singh\",\n  \"email\": \"neha.singh@yahoo.com\",\n  \"phone\": \"+91 9988776655\",\n  \"package\": \"Gold\",\n  \"area\": 2500,\n  \"message\": \"Interested in Gold package with premium features for 3BHK villa.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Quote - Platinum Package",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Vikram Mehta\",\n  \"email\": \"vikram.mehta@business.com\",\n  \"phone\": \"+91 9123456789\",\n  \"package\": \"Platinum\",\n  \"area\": 4000,\n  \"message\": \"Require luxury construction with Italian marble and premium fittings for 5BHK independent house.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Quote - Custom Package",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Anita Kapoor\",\n  \"email\": \"anita.k@outlook.com\",\n  \"phone\": \"+91 9876501234\",\n  \"package\": \"Custom Package\",\n  \"area\": 1800,\n  \"message\": \"Need customized package with specific requirements for earthquake-resistant structure.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Quote - Large Area (10000 sqft)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Rahul Malhotra\",\n  \"email\": \"rahul.m@enterprise.com\",\n  \"phone\": \"+91 9988001122\",\n  \"package\": \"Platinum\",\n  \"area\": 10000,\n  \"message\": \"Large commercial-residential complex project. Need detailed quotation.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Quote - Missing Phone (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"package\": \"Gold\",\n  \"area\": 2000,\n  \"message\": \"This should fail - missing phone\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Quote - Invalid Package (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"+91 9876543210\",\n  \"package\": \"Diamond\",\n  \"area\": 2000,\n  \"message\": \"This should fail - invalid package\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Submit Quote - Area Too Small (Error)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"+91 9876543210\",\n  \"package\": \"Silver\",\n  \"area\": 50,\n  \"message\": \"This should fail - area less than 100 sqft\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All Quote Requests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/quote",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Quotes - Filtered by Package",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/quote?package=Gold&status=pending",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote"],
+              "query": [
+                {
+                  "key": "package",
+                  "value": "Gold"
+                },
+                {
+                  "key": "status",
+                  "value": "pending"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Quote Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/api/quote/stats",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "quote", "stats"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Rate Limiting Tests",
+      "item": [
+        {
+          "name": "Test Rate Limit - Contact (Run 6 times quickly)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Rate Limit Test\",\n  \"email\": \"ratelimit@test.com\",\n  \"phone\": \"+91 9999999999\",\n  \"subject\": \"Other\",\n  \"message\": \"Testing rate limiting - submit this 6 times quickly to trigger limit\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/contact",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "5000",
+              "path": ["api", "contact"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
