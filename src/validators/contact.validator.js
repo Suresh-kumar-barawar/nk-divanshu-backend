@@ -12,7 +12,7 @@ const contactValidationRules = () => {
       .trim()
       .notEmpty().withMessage('Email is required')
       .isEmail().withMessage('Please enter a valid email address')
-      .normalizeEmail()
+      .normalizeEmail({ gmail_remove_dots: false })  // ← Fixed: Don't remove dots
       .isLength({ max: 255 }).withMessage('Email cannot exceed 255 characters'),
     
     body('phone')
